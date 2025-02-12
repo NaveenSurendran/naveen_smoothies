@@ -51,7 +51,7 @@ if ingredients_list:
             values ('""" + ingredients_string + """','"""+name_on_order+ """')"""
         
     st.write(my_insert_stmt)
-    st.stop()
+    #st.stop()
     
     my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED") == 0).collect()
     editable_df= st.data_editor(my_dataframe)
